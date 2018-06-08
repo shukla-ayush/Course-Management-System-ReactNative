@@ -1,13 +1,13 @@
 import 'es6-symbol/implement';
 
-const TRUE_FALSE_API_URL =
-    'http://192.168.241.2:8085/api/exam/EID/truefalse';
+const MULTI_CHOICE_API_URL =
+    'http://192.168.241.2:8085/api/exam/EID/choice';
 
-const TRUE_FALSE_API_URL2 =
-    'http://192.168.241.2:8085/api/truefalse';
+const MULTI_CHOICE_API_URL2 =
+    'http://192.168.241.2:8085/api/choice';
 
 let _singleton = Symbol();
-export default class TrueFalseQuestionService {
+export default class MultipleChoiceQuestionService {
     constructor(singletonToken) {
         if (_singleton !== singletonToken)
             throw new Error('Singleton!!!');
@@ -15,24 +15,24 @@ export default class TrueFalseQuestionService {
 
     static get instance() {
         if(!this[_singleton])
-            this[_singleton] = new TrueFalseQuestionService(_singleton);
+            this[_singleton] = new MultipleChoiceQuestionService(_singleton);
         return this[_singleton]
     }
 
-    findAllTrueFalseForExam(examId) {
+    findAllMultiChoiceForExam(examId) {
         return fetch(
-            TRUE_FALSE_API_URL
+            MULTI_CHOICE_API_URL
                 .replace('EID', examId))
             .then(function (response) {
                 return response.json();
             })
     }
 
-    createTrueFalse(examId,trueFalse) {
-        return fetch(TRUE_FALSE_API_URL
+    createMultiChoice(examId,choice) {
+        return fetch(MULTI_CHOICE_API_URL
                 .replace('EID', examId),
             {
-                body: JSON.stringify(trueFalse),
+                body: JSON.stringify(choice),
                 headers: { 'Content-Type': 'application/json' },
                 method: 'POST'
             })
@@ -40,9 +40,8 @@ export default class TrueFalseQuestionService {
             { return response.json(); })
     }
 
-    updateTrueFalse(questionId, question) {
-        console.log(questionId)
-        return fetch(TRUE_FALSE_API_URL2+'/'+ questionId,
+    updateMultiChoice(questionId, question) {
+        return fetch(MULTI_CHOICE_API_URL2+'/'+ questionId,
             {
                 body: JSON.stringify(question),
                 headers: { 'Content-Type': 'application/json' },
@@ -57,8 +56,8 @@ export default class TrueFalseQuestionService {
             })
     }
 
-    // deleteTrueFalse(questionId) {
-    //     return fetch(TRUE_FALSE_API_URL2 + '/' + questionId,
+    // deleteMultiChoice(questionId) {
+    //     return fetch(MULTI_CHOICE_API_URL2 + '/' + questionId,
     //         {
     //             method: 'DELETE'
     //         })

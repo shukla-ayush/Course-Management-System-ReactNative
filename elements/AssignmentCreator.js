@@ -1,19 +1,30 @@
-import React from 'react'
-import {ScrollView, View} from 'react-native'
+import React, {Component} from 'react'
+import {ScrollView, TextInput} from 'react-native'
 import {Text, Button} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
-import AssignmentServiceClient from "../services/AssignmentServiceClient";
+import AssignmentService from "../services/AssignmentService";
+import WidgetList from "../components/WidgetList";
 
 
-class AssignmentContainer extends React.Component {
-    static navigationOptions = { title: "Assignment Editor"};
+class AssignmentCreator extends React.Component {
+    static navigationOptions = { title: "Assignment Creator"};
     constructor(props) {
         super(props);
-        this.assignmentService = AssignmentServiceClient.instance;
+        this.assignmentService = AssignmentService.instance;
         this.state = {
-            lessonId: 1,
-            assignment : {title: '', description: '', points: 0, widgetType: "Assignment"}
+            lessonId: this.props.lessonId,
+            assignment: {
+                title: '',
+                description: '',
+                points: 0,
+                widgetType: 'Assignment'}
         }
+    }
+
+    componentDidMount() {
+        this.setState({
+            lessonId: this.props.lessonId
+        })
     }
 
     componentWillReceiveProps(newProps){
@@ -22,42 +33,34 @@ class AssignmentContainer extends React.Component {
         })
     }
 
-    componentDidMount() {
-        const {navigation} = this.props;
-        const lessonId = this.props.lessonId;
-        this.setState({
-            lessonId: lessonId
-        })
-    }
-
-    updateForm(newState) {
-        this.setState(newState)
-    }
-
     updateTitle(newTitle) {
         this.setState({assignment: {title: newTitle,
                 description: this.state.assignment.description,
                 points: this.state.assignment.points,
-                widgetType: this.state.assignment.widgetType}});
+                widgetType:this.state.assignment.widgetType}});
     }
 
     updateDescription(newDescription) {
         this.setState({assignment: {title: this.state.assignment.title,
-                        description: newDescription,
-                        points: this.state.assignment.points,
-                        widgetType: this.state.assignment.widgetType}});
+                description: newDescription,
+                points: this.state.assignment.points,
+                widgetType:this.state.assignment.widgetType}});
     }
 
     updatePoints(newPoints) {
         this.setState({assignment: {title: this.state.assignment.title,
-                                    description: this.state.assignment.description,
-                                    points: newPoints,
-                                    widgetType: this.state.assignment.widgetType}});
+                description: this.state.assignment.description,
+                points: newPoints,
+                widgetType:this.state.assignment.widgetType}});
     }
 
     createAssignment(){
         this.assignmentService
-            .createAssignment(this.state.lessonId, this.state.assignment);
+            .createAssignment(this.state.lessonId, this.state.assignment)
+            .then(() => {
+                this.props.navigation
+                    .navigate("WidgetList", {lessonId: this.state.lessonId})
+            });
     }
 
     render() {
@@ -94,15 +97,24 @@ class AssignmentContainer extends React.Component {
                 <Button	backgroundColor="red"
                            color="white"
                            title="Cancel"
-                           onPress={() => {this.updateForm({title:'',description:'',points:''})}}/>
+                           onPress={() => {
+                               this.props.navigation
+                                   .navigate("WidgetList", {lessonId: this.state.lessonId})
+                           }}/>
 
                 <Text h3>Preview</Text>
-                <Text h2>{this.state.title}</Text>
-                <Text>{this.state.description}</Text>
+
+                <Text>{this.state.assignment.title}</Text>
+                <Text>{this.state.assignment.description}</Text>
+                <Text>{this.state.assignment.points}</Text>
+
+
                 <Text h4>Essay Answer</Text>
-                <FormInput/>
+                <TextInput/>
+
                 <Text h4>Upload a file</Text>
                 <FormInput/>
+
                 <Text h4>Submit a Link</Text>
                 <FormInput/>
 
@@ -111,4 +123,4 @@ class AssignmentContainer extends React.Component {
     }
 }
 
-export default AssignmentContainer;
+export default AssignmentCreator

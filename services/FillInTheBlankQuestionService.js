@@ -2,6 +2,8 @@ import 'es6-symbol/implement';
 
 const FILL_BLANK_API_URL =
     'http://192.168.241.2:8085/api/exam/EID/blanks';
+const FILL_BLANK_API_URL2 =
+    'http://192.168.241.2:8085/api/blanks';
 
 let _singleton = Symbol();
 export default class FillInTheBlankQuestionService {
@@ -37,13 +39,34 @@ export default class FillInTheBlankQuestionService {
             { return response.json(); })
     }
 
-    // deleteTrueFalse(questionId) {
-    //     return fetch(ASSIGNMENT_API_URL + '/' + questionId,
+    updateFillInTheBlank(questionId, question) {
+        return fetch(FILL_BLANK_API_URL2+'/'+ questionId,
+            {
+                body: JSON.stringify(question),
+                headers: { 'Content-Type': 'application/json' },
+                method: 'PUT'
+            })
+            .then(function (response)
+            {
+                return response.json();
+            })
+            .catch(function(error) {
+                console.log(error.message);
+            })
+    }
+
+    // deleteFillInTheBlank(questionId) {
+    //     return fetch(FILL_BLANK_API_URL2 + '/' + questionId,
     //         {
     //             method: 'DELETE'
     //         })
     //         .then(function (response)
-    //         { return response; })
+    //         {
+    //             return response;
+    //         })
+    //         .catch(function(error) {
+    //             console.log(error.message);
+    //         })
     // }
 
 }

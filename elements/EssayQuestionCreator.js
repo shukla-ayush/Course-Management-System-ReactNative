@@ -1,17 +1,18 @@
 import React from 'react'
-import {ScrollView, View} from 'react-native'
+import {ScrollView, TextInput, View} from 'react-native'
 import {Text, Button, CheckBox} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage}
     from 'react-native-elements'
 import EssayQuestionService from "../services/EssayQuestionService";
+import QuestionList from "../components/QuestionList"
 
-class EssayQuestionEditor extends React.Component {
+class EssayQuestionCreator extends React.Component {
     static navigationOptions = { title: "Essay"}
     constructor(props) {
         super(props)
         this.state = {
             examId: 1,
-            essayQuestion: {title: '', description: '', points: 0}
+            essayQuestion: {title: '', description: '', points: 0, type: 'Essay'}
         }
         this.essayQuestionService = EssayQuestionService.instance;
     }
@@ -33,23 +34,22 @@ class EssayQuestionEditor extends React.Component {
     updateTitle(newTitle) {
         this.setState({essayQuestion: {title: newTitle,
                 description: this.state.essayQuestion.description,
-                points: this.state.essayQuestion.points}});
+                points: this.state.essayQuestion.points,
+                type: this.state.essayQuestion.type}});
     }
 
     updateDescription(newDescription) {
         this.setState({essayQuestion: {title: this.state.essayQuestion.title,
                 description: newDescription,
-                points: this.state.essayQuestion.points}});
+                points: this.state.essayQuestion.points,
+                type: this.state.essayQuestion.type}});
     }
 
     updatePoints(newPoints) {
         this.setState({essayQuestion: {title: this.state.essayQuestion.title,
                 description: this.state.essayQuestion.description,
-                points: newPoints}});
-    }
-
-    updateForm(newState) {
-        this.setState(newState)
+                points: newPoints,
+                type: this.state.essayQuestion.type}});
     }
 
     createEssay(){
@@ -68,7 +68,7 @@ class EssayQuestionEditor extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput onChangeText={
+                <TextInput onChangeText={
                     text => this.updateDescription(text)
                 }/>
                 <FormValidationMessage>
@@ -87,12 +87,17 @@ class EssayQuestionEditor extends React.Component {
                            color="white"
                            title="Save"
                            onPress={() => {this.createEssay()}}/>
+
                 <Button	backgroundColor="red"
                            color="white"
-                           title="Cancel"/>
+                           title="Cancel"
+                           onPress={() => {
+                               this.props.navigation
+                                   .navigate("QuestionList", {lessonId: this.state.lessonId, examId: this.state.examId})}}/>
 
                 <Text h3>Preview</Text>
-                <Text h2>{this.state.essayQuestion.title}</Text>
+
+                <Text>{this.state.essayQuestion.title}</Text>
                 <Text>{this.state.essayQuestion.description}</Text>
                 <Text>{this.state.essayQuestion.points}</Text>
 
@@ -101,4 +106,4 @@ class EssayQuestionEditor extends React.Component {
     }
 }
 
-export default EssayQuestionEditor
+export default EssayQuestionCreator

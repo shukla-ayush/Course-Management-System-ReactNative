@@ -2,29 +2,29 @@ import React from 'react'
 import {ScrollView} from 'react-native'
 import {Text, Button} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
-import AssignmentServiceClient from "../services/AssignmentServiceClient";
+import AssignmentService from "../services/AssignmentService";
+import WidgetList from "../components/WidgetList";
 
 
 class AssignmentEditor extends React.Component {
     static navigationOptions = { title: "Assignment Editor"};
     constructor(props) {
         super(props);
-        this.assignmentService = AssignmentServiceClient.instance;
+        this.assignmentService = AssignmentService.instance;
         this.state = {
             assignmentId:1,
-            assignment: {
-                title: '',
-                description: '',
-                points: 0,
-                widgetType: 'Assignment'}
+            lessonId:1,
+            assignment: {title: '', description: '', points: 0, widgetType: 'Assignment'}
         }
     }
 
     componentDidMount() {
         const {navigation} = this.props;
         const assignmentId = navigation.getParam('assignmentId');
+        const lessonId = navigation.getParam('lessonId');
         const widget = navigation.getParam('widget');
         this.setState({
+            lessonId:lessonId,
             assignmentId: assignmentId,
             assignment: widget
         })
@@ -32,6 +32,7 @@ class AssignmentEditor extends React.Component {
 
     componentWillReceiveProps(newProps){
         this.setState({
+            lessonId: newProps.lessonId,
             assignmentId: newProps.assignmentId
         })
     }
@@ -57,18 +58,21 @@ class AssignmentEditor extends React.Component {
                 widgetType:this.state.assignment.widgetType}});
     }
 
-    updateForm(newState) {
-        this.setState(newState)
-    }
-
     updateAssignment(){
         this.assignmentService
-            .updateAssignment(this.state.assignmentId, this.state.assignment);
-    }
+            .updateAssignment(this.state.assignmentId, this.state.assignment)
+            .then(() => {
+                this.props.navigation
+                    .navigate("WidgetList", {lessonId: this.state.lessonId});
+            })}
 
-    deleteWidget(){
+    deleteAssignment(){
         this.assignmentService
-            .deleteAssignment(this.state.assignmentId);
+            .deleteAssignment(this.state.assignmentId)
+            .then(() => {
+                this.props.navigation
+                    .navigate("WidgetList", {lessonId: this.state.lessonId});
+            })
     }
 
     render() {
@@ -101,37 +105,40 @@ class AssignmentEditor extends React.Component {
                         points => this.updatePoints(points)
                     }/>
                 <FormValidationMessage>
-                    Points is required
+                    Points are required
                 </FormValidationMessage>
 
                 <Button	backgroundColor="green"
                            color="white"
                            title="Update"
                            onPress={() => {this.updateAssignment()}}/>
-                <Button	backgroundColor="blue"
+
+                <Button	backgroundColor="black"
                            color="white"
                            title="Cancel"
-                           onPress={() => {this.updateForm({title:'',description:'',points:'',widgetType:'assignment'})}}/>
+                           onPress={() => {
+                               this.props.navigation
+                                   .navigate("WidgetList", {lessonId: this.state.lessonId})}}/>
+
                 <Button backgroundColor="red"
                         color="white"
-                        onPress={() => {this.deleteWidget()}}
-                        title="Delete Widget"/>
+                        onPress={() => {this.deleteAssignment()}}
+                        title="Delete Assignment"/>
 
                 <Text h3>Preview</Text>
-                <Text h2>{this.state.title}</Text>
-                <Text>{this.state.description}</Text>
+
+                <Text>{this.state.assignment.title}</Text>
+                <Text>{this.state.assignment.description}</Text>
+                <Text>{this.state.assignment.points}</Text>
+
                 <Text h4>Essay Answer</Text>
                 <FormInput/>
+
                 <Text h4>Upload a file</Text>
                 <FormInput/>
+
                 <Text h4>Submit a Link</Text>
                 <FormInput/>
-                <Button	backgroundColor="green"
-                           color="white"
-                           title="Submit"/>
-                <Button	backgroundColor="red"
-                           color="white"
-                           title="Cancel"/>
 
             </ScrollView>
         )

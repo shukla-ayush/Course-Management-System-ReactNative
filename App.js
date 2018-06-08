@@ -1,27 +1,3 @@
-// import React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
-//
-// export default class App extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text>Open up App.js to start working on your app!</Text>
-//         <Text>Changes you make will automatically reload.</Text>
-//         <Text>Shake your phone to open the developer menu.</Text>
-//       </View>
-//     );
-//   }
-// }
-//
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
 import 'es6-symbol/implement';
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView } from 'react-native';
@@ -31,8 +7,8 @@ import Icons from './elements/Icons'
 import Exam from './elements/Exam'
 import QuestionTypeButtonGroupChooser from './elements/QuestionTypeButtonGroupChooser'
 import QuestionTypePicker from './elements/QuestionTypePicker'
-import TrueFalseQuestionEditor from './elements/TrueFalseQuestionEditor'
-import MultipleChoiceQuestionEditor from './elements/MultipleChoiceQuestionEditor'
+import TrueFalseQuestionCreator from './elements/TrueFalseQuestionCreator'
+import MultipleChoiceQuestionCreator from './elements/MultipleChoiceQuestionCreator'
 import { createStackNavigator } from 'react-navigation'
 import {Button} from 'react-native-elements'
 import ScreenX from './elements/ScreenX'
@@ -42,13 +18,17 @@ import LessonList from './components/LessonList'
 import WidgetList from './components/WidgetList'
 import QuestionList from './components/QuestionList'
 import WidgetEditor from "./elements/WidgetEditor";
-import AssignmentContainer from "./elements/AssignmentContainer";
+import AssignmentCreator from "./elements/AssignmentCreator";
 import AssignmentEditor from "./elements/AssignmentEditor";
-import ExamContainer from "./elements/ExamContainer";
+import ExamEditor from "./elements/ExamEditor";
+import TrueFalseEditor from "./elements/TrueFalseEditor";
+import MultiChoiceEditor from "./elements/MultipleChoiceEditor";
+import FillInTheBlankEditor from "./elements/FillInTheBlankEditor";
+import EssayEditor from "./elements/EssayEditor";
 
 class Home extends React.Component {
     static navigationOptions = {
-        title: 'Home'
+        title: 'Course Management System'
     }
     constructor(props) {
         super(props)
@@ -62,28 +42,7 @@ class Home extends React.Component {
                 <Button title="Courses"
                         onPress={() => this.props.navigation
                             .navigate('CourseList') } />
-                {/*<Button title="Go to Screen X"*/}
-                        {/*onPress={() => this.props.navigation*/}
-                            {/*.navigate('ScreenX') } />*/}
-                {/*<Button title="Go to Screen A"*/}
-                        {/*onPress={() => this.props.navigation*/}
-                            {/*.navigate('ScreenA') } />*/}
-                {/*<Button title="Go to Screen B"*/}
-                        {/*onPress={() => this.props.navigation*/}
-                            {/*.navigate('ScreenB') } />*/}
 
-
-                {/*<TrueFalseQuestionEditor/>*/}
-
-                {/*<QuestionTypeButtonGroupChooser/>*/}
-                {/*<QuestionTypePicker/>*/}
-
-                {/*<Exam/>*/}
-
-                {/*<Icons/>*/}
-                {/*<View style={{padding: 20}}>*/}
-                    {/*<TextHeadings/>*/}
-                {/*</View>*/}
             </ScrollView>
         )
     }
@@ -97,12 +56,16 @@ const App = createStackNavigator({
     LessonList,
     WidgetList,
     WidgetEditor,
-    ExamContainer,
-    AssignmentContainer,
+    ExamEditor,
+    AssignmentCreator,
     AssignmentEditor,
     QuestionList,
-    TrueFalseQuestionEditor,
-    MultipleChoiceQuestionEditor
+    TrueFalseEditor,
+    MultiChoiceEditor,
+    FillInTheBlankEditor,
+    EssayEditor,
+    TrueFalseQuestionCreator,
+    MultipleChoiceQuestionCreator
 });
 
 export default App;

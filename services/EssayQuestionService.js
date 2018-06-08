@@ -3,8 +3,11 @@ import 'es6-symbol/implement';
 const ESSAY_API_URL =
     'http://192.168.241.2:8085/api/exam/EID/essay';
 
+const ESSAY_API_URL2 =
+    'http://192.168.241.2:8085/api/essay';
+
 let _singleton = Symbol();
-export default class AssignmentServiceClient {
+export default class EssayQuestionService {
     constructor(singletonToken) {
         if (_singleton !== singletonToken)
             throw new Error('Singleton!!!');
@@ -12,7 +15,7 @@ export default class AssignmentServiceClient {
 
     static get instance() {
         if(!this[_singleton])
-            this[_singleton] = new AssignmentServiceClient(_singleton);
+            this[_singleton] = new EssayQuestionService(_singleton);
         return this[_singleton]
     }
 
@@ -37,13 +40,34 @@ export default class AssignmentServiceClient {
             { return response.json(); })
     }
 
-    // deleteTrueFalse(questionId) {
-    //     return fetch(ASSIGNMENT_API_URL + '/' + questionId,
+    updateEssay(questionId, question) {
+        return fetch(ESSAY_API_URL2+'/'+ questionId,
+            {
+                body: JSON.stringify(question),
+                headers: { 'Content-Type': 'application/json' },
+                method: 'PUT'
+            })
+            .then(function (response)
+            {
+                return response.json();
+            })
+            .catch(function(error) {
+                console.log(error.message);
+            })
+    }
+
+    // deleteEssay(questionId) {
+    //     return fetch(ESSAY_API_URL2 + '/' + questionId,
     //         {
     //             method: 'DELETE'
     //         })
     //         .then(function (response)
-    //         { return response; })
+    //         {
+    //             return response;
+    //         })
+    //         .catch(function(error) {
+    //             console.log(error.message);
+    //         })
     // }
 
 }

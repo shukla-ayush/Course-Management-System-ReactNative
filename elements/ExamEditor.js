@@ -1,20 +1,26 @@
 import React from 'react'
-import {ScrollView, View} from 'react-native'
+import {ScrollView} from 'react-native'
 import {Text, Button} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
-import ExamServiceClient from "../services/ExamServiceClient";
-import QuestionTypePicker from "./QuestionTypePicker";
+import ExamService from "../services/ExamService";
+import WidgetList from "../components/WidgetList";
 
 
-class ExamContainer extends React.Component {
-    static navigationOptions = { title: "Assignment Editor"};
+class ExamEditor extends React.Component {
+    static navigationOptions = { title: "Exam Editor"};
     constructor(props) {
         super(props);
-        this.examService = ExamServiceClient.instance;
+        this.examService = ExamService.instance;
         this.state = {
-            lessonId: 1,
-            exam : {title: '', description: '', questions: [], widgetType: "Exam"}
+            lessonId: this.props.lessonId,
+            exam : {title: '', description: '', questions: [], widgetType: 'Exam'}
         }
+    }
+
+    componentDidMount() {
+        this.setState({
+            lessonId: this.props.lessonId
+        })
     }
 
     componentWillReceiveProps(newProps){
@@ -23,35 +29,27 @@ class ExamContainer extends React.Component {
         })
     }
 
-    componentDidMount() {
-        const {navigation} = this.props;
-        const lessonId = this.props.lessonId;
-        this.setState({
-            lessonId: lessonId
-        })
-    }
-
-    updateForm(newState) {
-        this.setState(newState)
-    }
-
     updateTitle(newTitle) {
         this.setState({exam: {title: newTitle,
-                        description: this.state.exam.description,
-                        questions: this.state.exam.questions,
-                        widgetType:this.state.exam.widgetType}});
+                description: this.state.exam.description,
+                questions: this.state.exam.questions,
+                widgetType:this.state.exam.widgetType}});
     }
 
     updateDescription(newDescription) {
         this.setState({exam: {title: this.state.exam.title,
-                            description: newDescription,
-                            questions: this.state.exam.questions,
-                            widgetType: this.state.exam.widgetType}});
+                description: newDescription,
+                questions: this.state.exam.questions,
+                widgetType:this.state.exam.widgetType}});
     }
 
     createExam(){
         this.examService
-            .createExam(this.state.lessonId, this.state.exam);
+            .createExam(this.state.lessonId, this.state.exam)
+            .then(() => {
+                this.props.navigation
+                    .navigate("WidgetList", {lessonId: this.state.lessonId})
+            });
     }
 
     render() {
@@ -73,8 +71,6 @@ class ExamContainer extends React.Component {
                     Description is required
                 </FormValidationMessage>
 
-                {/*<QuestionTypePicker/>*/}
-
                 <Button	backgroundColor="green"
                            color="white"
                            title="Save"
@@ -83,11 +79,14 @@ class ExamContainer extends React.Component {
                 <Button	backgroundColor="red"
                            color="white"
                            title="Cancel"
-                           onPress={() => {this.setState({exam: {title:'',description:'',questions:[]}})}}/>
+                           onPress={() =>
+                               this.props.navigation
+                                   .navigate("WidgetList", {lessonId: this.state.lessonId})
+                           }/>
 
                 <Text h3>Preview</Text>
-                {/*<Text h2>{this.state.exam.title}</Text>*/}
-                {/*<Text>{this.state.exam.description}</Text>*/}
+                {<Text>{this.state.exam.title}</Text>}
+                {<Text>{this.state.exam.description}</Text>}
                 <FormInput/>
 
             </ScrollView>
@@ -95,4 +94,4 @@ class ExamContainer extends React.Component {
     }
 }
 
-export default ExamContainer
+export default ExamEditor

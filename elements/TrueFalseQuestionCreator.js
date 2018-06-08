@@ -1,19 +1,21 @@
 import React from 'react'
-import {View} from 'react-native'
+import {ScrollView, View} from 'react-native'
 import {Text, Button, CheckBox} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage}
     from 'react-native-elements'
 import TrueFalseQuestionService from "../services/TrueFalseQuestionService";
+import QuestionList from "../components/QuestionList"
 
-class TrueFalseQuestionEditor extends React.Component {
+class TrueFalseQuestionCreator extends React.Component {
     static navigationOptions = { title: "True False"}
     constructor(props) {
         super(props)
         this.state = {
             examId: 1,
-            trueFalseQuestion: {title: '', description: '', points: 0, isTrue: true }
+            trueFalseQuestion: {title: '', description: '', points: 0, isTrue: true, type: 'TrueFalse' }
         }
         this.trueFalseQuestionService = TrueFalseQuestionService.instance;
+        this.updateIsTrue = this.updateIsTrue.bind(this);
     }
 
     componentWillReceiveProps(newProps){
@@ -34,41 +36,45 @@ class TrueFalseQuestionEditor extends React.Component {
         this.setState({trueFalseQuestion: {title: newTitle,
                 description: this.state.trueFalseQuestion.description,
                 points: this.state.trueFalseQuestion.points,
-                isTrue: this.state.trueFalseQuestion.isTrue}});
+                isTrue: this.state.trueFalseQuestion.isTrue,
+                type: this.state.trueFalseQuestion.type}});
     }
 
     updateDescription(newDescription) {
         this.setState({trueFalseQuestion: {title: this.state.trueFalseQuestion.title,
                 description: newDescription,
                 points: this.state.trueFalseQuestion.points,
-                isTrue: this.state.trueFalseQuestion.isTrue}});
+                isTrue: this.state.trueFalseQuestion.isTrue,
+                type: this.state.trueFalseQuestion.type}});
     }
 
     updatePoints(newPoints) {
         this.setState({trueFalseQuestion: {title: this.state.trueFalseQuestion.title,
                 description: this.state.trueFalseQuestion.description,
                 points: newPoints,
-                isTrue: this.state.trueFalseQuestion.isTrue}});
+                isTrue: this.state.trueFalseQuestion.isTrue,
+                type: this.state.trueFalseQuestion.type}});
     }
 
     updateIsTrue(newIsTrue) {
         this.setState({trueFalseQuestion: {title: this.state.trueFalseQuestion.title,
                 description: this.state.trueFalseQuestion.description,
                 points: this.state.trueFalseQuestion.points,
-                isTrue: newIsTrue}});
-    }
-
-    updateForm(newState) {
-        this.setState(newState)
+                isTrue: newIsTrue,
+                type: this.state.trueFalseQuestion.type}});
     }
 
     createTrueFalse(){
         this.trueFalseQuestionService.createTrueFalse(this.state.examId, this.state.trueFalseQuestion)
+            .then(() => {
+                this.props.navigation
+                    .navigate("QuestionList", {examId: this.state.examId, lessonId: this.state.lessonId})
+            });
     }
 
     render() {
         return(
-            <View>
+            <ScrollView>
                 <FormLabel>Title</FormLabel>
                 <FormInput onChangeText={
                     titleText => this.updateTitle(titleText)
@@ -94,7 +100,7 @@ class TrueFalseQuestionEditor extends React.Component {
                 </FormValidationMessage>
 
 
-                <CheckBox onPress={() => this.updateIsTrue(this.state.isTrue)}
+                <CheckBox onPress={() => this.updateIsTrue(!this.state.trueFalseQuestion.isTrue)}
                         checked={this.state.trueFalseQuestion.isTrue} title='The answer is true'/>
 
                 <Button	backgroundColor="green"
@@ -104,15 +110,20 @@ class TrueFalseQuestionEditor extends React.Component {
 
                 <Button	backgroundColor="red"
                            color="white"
-                           title="Cancel"/>
+                           title="Cancel"
+                           onPress={() => {
+                               this.props.navigation
+                                   .navigate("QuestionList", {lessonId: this.state.lessonId, examId: this.state.examId})}}/>
 
 
                 <Text h3>Preview</Text>
-                <Text h2>{this.state.trueFalseQuestion.title}</Text>
+
+                <Text>{this.state.trueFalseQuestion.title}</Text>
                 <Text>{this.state.trueFalseQuestion.description}</Text>
-            </View>
+
+            </ScrollView>
         )
     }
 }
 
-export default TrueFalseQuestionEditor;
+export default TrueFalseQuestionCreator;
