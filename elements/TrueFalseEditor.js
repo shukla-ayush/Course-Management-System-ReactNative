@@ -1,5 +1,5 @@
 import React from 'react'
-import {ScrollView, View} from 'react-native'
+import {ScrollView, TextInput, View} from 'react-native'
 import {Text, Button, CheckBox} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage}
     from 'react-native-elements'
@@ -103,7 +103,9 @@ class TrueFalseEditor extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput
+                <TextInput
+                    multiline={true}
+                    numberOfLines={2}
                     value ={this.state.trueFalseQuestion.description}
                     onChangeText={
                     descriptionText => this.updateDescription(descriptionText)

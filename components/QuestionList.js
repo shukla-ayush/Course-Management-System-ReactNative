@@ -8,9 +8,9 @@ import TrueFalseQuestionCreator from "../elements/TrueFalseQuestionCreator";
 import EssayQuestionCreator from "../elements/EssayQuestionCreator";
 import FillInTheBlankQuestionCreator from "../elements/FillInTheBlankQuestionCreator";
 import FillInTheBlankEditor from "../elements/FillInTheBlankEditor";
-import MultiChoiceUpdator from "../elements/MultipleChoiceEditor";
+import MultipleChoiceEditor from "../elements/MultipleChoiceEditor";
 import TrueFalseEditor from "../elements/TrueFalseEditor";
-import EssayUpdator from "../elements/EssayEditor";
+import EssayEditor from "../elements/EssayEditor";
 
 
 class QuestionList extends Component {
@@ -113,13 +113,14 @@ class QuestionList extends Component {
                                         .navigate("TrueFalseEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
                                 if (question.type === "MultiChoice")
                                 {this.props.navigation
-                                        .navigate("MultiChoiceUpdator", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
+                                        .navigate("MultipleChoiceEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
                                 if (question.type === "Essay")
                                 {this.props.navigation
-                                    .navigate("EssayUpdator", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
+                                    .navigate("EssayEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
                                 if (question.type === "FillInTheBlank")
                                 {this.props.navigation
                                     .navigate("FillInTheBlankEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
+
                             }}
                             key={index}
                             subtitle={question.description}

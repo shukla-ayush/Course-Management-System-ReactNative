@@ -22,7 +22,7 @@ import AssignmentCreator from "./elements/AssignmentCreator";
 import AssignmentEditor from "./elements/AssignmentEditor";
 import ExamEditor from "./elements/ExamEditor";
 import TrueFalseEditor from "./elements/TrueFalseEditor";
-import MultiChoiceEditor from "./elements/MultipleChoiceEditor";
+import MultipleChoiceEditor from "./elements/MultipleChoiceEditor";
 import FillInTheBlankEditor from "./elements/FillInTheBlankEditor";
 import EssayEditor from "./elements/EssayEditor";
 
@@ -61,7 +61,7 @@ const App = createStackNavigator({
     AssignmentEditor,
     QuestionList,
     TrueFalseEditor,
-    MultiChoiceEditor,
+    MultipleChoiceEditor,
     FillInTheBlankEditor,
     EssayEditor,
     TrueFalseQuestionCreator,

@@ -2,26 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="894f5745-47cb-4f1b-a097-bff416d13591" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/elements/AssignmentCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elements/ExamEditor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elements/MultipleChoiceQuestionCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/QuestionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/QuestionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WidgetList.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/WidgetList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/AssignmentContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/AssignmentCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/AssignmentCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elements/AssignmentEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/AssignmentEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/EssayQuestionEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/EssayQuestionCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/ExamContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/FillInTheBlankQuestionEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/MultipleChoiceQuestionEditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/TrueFalseQuestionEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/EssayEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/EssayEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/EssayQuestionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/EssayQuestionCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/ExamEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/ExamEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/FillInTheBlankEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/FillInTheBlankEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/MultipleChoiceEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/MultipleChoiceEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/MultipleChoiceQuestionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/MultipleChoiceQuestionCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/TrueFalseEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TrueFalseEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elements/WidgetEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/WidgetEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AssignmentServiceClient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/EssayQuestionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/EssayQuestionService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/ExamServiceClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/ExamService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/FillInTheBlankQuestionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/FillInTheBlankQuestionService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/TrueFalseQuestionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/TrueFalseQuestionService.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,8 +32,8 @@
       <file leaf-file-name="TrueFalseEditor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elements/TrueFalseEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+            <state relative-caret-position="284">
+              <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -47,58 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Icons.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elements/Icons.js">
+      <file leaf-file-name="MultipleChoiceQuestionCreator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/MultipleChoiceQuestionCreator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExamEditor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elements/ExamEditor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-657">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding>
-                <element signature="e#3389#3414#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EssayEditor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elements/EssayEditor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EssayQuestionCreator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elements/EssayQuestionCreator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-470">
-              <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrueFalseQuestionCreator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="1649">
+              <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -109,8 +56,8 @@
       <file leaf-file-name="MultipleChoiceEditor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elements/MultipleChoiceEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="104" selection-end-column="5" />
+            <state relative-caret-position="74">
+              <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -118,22 +65,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssignmentEditor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elements/AssignmentEditor.js">
+      <file leaf-file-name="TrueFalseQuestionCreator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="210">
+              <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
               <folding>
-                <element signature="e#1#26#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssignmentCreator.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elements/AssignmentCreator.js">
+      <file leaf-file-name="QuestionList.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/QuestionList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-674">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+            <state relative-caret-position="179">
+              <caret line="112" column="173" selection-start-line="112" selection-start-column="173" selection-end-line="112" selection-end-column="173" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FillInTheBlankQuestionCreator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,8 +104,38 @@
       <file leaf-file-name="FillInTheBlankEditor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elements/FillInTheBlankEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="101" column="35" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
+            <state relative-caret-position="425">
+              <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssignmentCreator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/AssignmentCreator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssignmentEditor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/AssignmentEditor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EssayEditor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/EssayEditor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -199,21 +192,21 @@
         <option value="$PROJECT_DIR$/services/MultipleChoiceQuestionService.js" />
         <option value="$PROJECT_DIR$/services/ExamService.js" />
         <option value="$PROJECT_DIR$/services/AssignmentClient.js" />
-        <option value="$PROJECT_DIR$/elements/WidgetEditor.js" />
         <option value="$PROJECT_DIR$/elements/ExamContainer.js" />
         <option value="$PROJECT_DIR$/App.js" />
-        <option value="$PROJECT_DIR$/components/QuestionList.js" />
-        <option value="$PROJECT_DIR$/elements/AssignmentCreator.js" />
-        <option value="$PROJECT_DIR$/elements/EssayEditor.js" />
-        <option value="$PROJECT_DIR$/elements/EssayQuestionCreator.js" />
+        <option value="$PROJECT_DIR$/elements/WidgetEditor.js" />
         <option value="$PROJECT_DIR$/elements/ExamEditor.js" />
-        <option value="$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js" />
+        <option value="$PROJECT_DIR$/elements/EssayQuestionCreator.js" />
+        <option value="$PROJECT_DIR$/elements/EssayEditor.js" />
+        <option value="$PROJECT_DIR$/elements/AssignmentEditor.js" />
+        <option value="$PROJECT_DIR$/elements/AssignmentCreator.js" />
+        <option value="$PROJECT_DIR$/elements/MultipleChoiceEditor.js" />
         <option value="$PROJECT_DIR$/elements/MultipleChoiceQuestionCreator.js" />
+        <option value="$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js" />
+        <option value="$PROJECT_DIR$/elements/FillInTheBlankEditor.js" />
         <option value="$PROJECT_DIR$/elements/TrueFalseEditor.js" />
         <option value="$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js" />
-        <option value="$PROJECT_DIR$/elements/MultipleChoiceEditor.js" />
-        <option value="$PROJECT_DIR$/elements/FillInTheBlankEditor.js" />
-        <option value="$PROJECT_DIR$/elements/AssignmentEditor.js" />
+        <option value="$PROJECT_DIR$/components/QuestionList.js" />
       </list>
     </option>
   </component>
@@ -303,12 +296,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528266284384</updated>
       <workItem from="1528266287691" duration="82063000" />
-      <workItem from="1528428275690" duration="12619000" />
+      <workItem from="1528428275690" duration="15286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94682000" />
+    <option name="totallyTimeSpent" value="97349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -367,6 +360,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2074">
           <caret line="122" column="16" selection-end-line="216" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -432,9 +428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4199">
           <caret line="392" lean-forward="true" selection-start-line="392" selection-end-line="392" />
-          <folding>
-            <element signature="e#1#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -488,34 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/AssignmentService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/WidgetList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="251" column="5" lean-forward="true" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#6749#6787#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/WidgetEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#1561#1586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/TrueFalseQuestionService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -549,6 +514,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/elements/QuestionTypeButtonGroupChooser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/Icons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/AssignmentService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/CourseList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
@@ -579,113 +570,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/QuestionList.js">
+    <entry file="file://$PROJECT_DIR$/components/WidgetList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="100" column="51" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="621">
+          <caret line="251" column="5" lean-forward="true" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elements/MultipleChoiceQuestionCreator.js">
+    <entry file="file://$PROJECT_DIR$/elements/WidgetEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/QuestionTypeButtonGroupChooser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/TrueFalseEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/Icons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/MultipleChoiceEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="104" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/FillInTheBlankEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="101" column="35" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="612">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elements/ExamEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-657">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="68" column="36" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/EssayQuestionCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
           <folding>
-            <element signature="e#3389#3414#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elements/EssayEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements/EssayQuestionCreator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-470">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -694,17 +616,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elements/AssignmentEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#1#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elements/AssignmentCreator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-674">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="68">
+          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/FillInTheBlankEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/FillInTheBlankQuestionCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/TrueFalseEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/TrueFalseQuestionCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/MultipleChoiceQuestionCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/MultipleChoiceEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/QuestionList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="112" column="173" selection-start-line="112" selection-start-column="173" selection-end-line="112" selection-end-column="173" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

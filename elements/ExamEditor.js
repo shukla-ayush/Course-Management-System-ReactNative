@@ -1,5 +1,5 @@
 import React from 'react'
-import {ScrollView} from 'react-native'
+import {ScrollView, TextInput} from 'react-native'
 import {Text, Button} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
 import ExamService from "../services/ExamService";
@@ -64,7 +64,10 @@ class ExamEditor extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput onChangeText={
+                <TextInput
+                    multiline={true}
+                    numberOfLines={2}
+                    onChangeText={
                     text => this.updateDescription(text)
                 }/>
                 <FormValidationMessage>

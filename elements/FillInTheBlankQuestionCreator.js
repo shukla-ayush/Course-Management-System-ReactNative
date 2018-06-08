@@ -1,5 +1,5 @@
 import React from 'react'
-import {ScrollView, View} from 'react-native'
+import {ScrollView, TextInput, View} from 'react-native'
 import {Text, Button, CheckBox} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage}
     from 'react-native-elements'
@@ -102,7 +102,10 @@ class FillInTheBlankQuestionCreator extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput onChangeText={
+                <TextInput
+                    multiline={true}
+                    numberOfLines={2}
+                    onChangeText={
                     text => this.updateDescription(text)
                 }/>
                 <FormValidationMessage>
@@ -118,7 +121,10 @@ class FillInTheBlankQuestionCreator extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Question Text</FormLabel>
-                <FormInput onChangeText={
+                <TextInput
+                    multiline={true}
+                    numberOfLines={2}
+                    onChangeText={
                     text => this.updateQuestionText(text)
                 }/>
                 <FormValidationMessage>

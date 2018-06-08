@@ -1,5 +1,5 @@
 import React from 'react'
-import {ScrollView} from 'react-native'
+import {ScrollView, TextInput} from 'react-native'
 import {Text, Button} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
 import AssignmentService from "../services/AssignmentService";
@@ -80,6 +80,7 @@ class AssignmentEditor extends React.Component {
             <ScrollView>
                 <FormLabel>Title</FormLabel>
                 <FormInput
+
                     value ={this.state.assignment.title}
                     onChangeText={
                         text => this.updateTitle(text)
@@ -89,7 +90,9 @@ class AssignmentEditor extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput
+                <TextInput
+                    multiline={true}
+                    numberOfLines={2}
                     value ={this.state.assignment.description}
                     onChangeText={
                         text => this.updateDescription(text)

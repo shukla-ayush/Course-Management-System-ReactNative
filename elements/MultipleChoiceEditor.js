@@ -1,5 +1,5 @@
 import React from 'react'
-import {ScrollView} from 'react-native'
+import {ScrollView, TextInput} from 'react-native'
 import {Text, Button} from 'react-native-elements'
 import {FormLabel, FormInput, FormValidationMessage,ButtonGroup} from 'react-native-elements'
 import MultipleChoiceQuestionService from "../services/MultipleChoiceQuestionService";
@@ -118,7 +118,9 @@ class MultipleChoiceEditor extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput
+                <TextInput
+                    multiline={true}
+                    numberOfLines={2}
                     value ={this.state.multipleChoiceQuestion.description}
                     onChangeText={
                     descriptionText => this.updateDescription(descriptionText)

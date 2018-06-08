@@ -75,7 +75,10 @@ class AssignmentCreator extends React.Component {
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput onChangeText={
+                <TextInput
+                    multiline={true}
+                    numberOfLines={2}
+                    onChangeText={
                     text => this.updateDescription(text)
                 }/>
                 <FormValidationMessage>
