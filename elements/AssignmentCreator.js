@@ -13,11 +13,7 @@ class AssignmentCreator extends React.Component {
         this.assignmentService = AssignmentService.instance;
         this.state = {
             lessonId: this.props.lessonId,
-            assignment: {
-                title: '',
-                description: '',
-                points: 0,
-                widgetType: 'Assignment'}
+            assignment: {title: '', description: '', points: 0, widgetType: 'Assignment'}
         }
     }
 

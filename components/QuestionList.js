@@ -49,11 +49,16 @@ class QuestionList extends Component {
     }
 
     componentWillReceiveProps(newProps) {
+        const {navigation} = this.props;
+        const examId = navigation.getParam("examId");
+        const lessonId = navigation.getParam("lessonId");
+        console.log(examId)
+        console.log(lessonId)
         this.setState({
-            examId: newProps.examId,
-            lessonId: newProps.lessonId
+            examId: examId,
+            lessonId: lessonId
         })
-        fetch("http://192.168.241.2:8085/api/exam/" + newProps.examId + "/question")
+        fetch("http://192.168.241.2:8085/api/exam/" + examId + "/question")
             .then(response => (response.json()))
             .then(questions => this.setState({questions: questions}))
             .catch(function(error) {
@@ -88,21 +93,32 @@ class QuestionList extends Component {
 
             <ScrollView style={{padding: 15}}>
 
-                <Button backgroundColor="red"
-                        color="black"
-                        onPress={() => {
-                            this.deleteExam()}}
-                        title="Delete Exam"/>
 
                 <ButtonGroup
                     onPress={this.selectQuestionType}
                     selectedIndex={this.state.selectedQuestionTypeIndex}
                     buttons={questionTypes}
                     containerStyle={{height: 75}}/>
-                {this.state.selectedQuestionTypeIndex === 0 && <MultipleChoiceQuestionCreator examId={this.state.examId}/>}
-                {this.state.selectedQuestionTypeIndex === 3 && <TrueFalseQuestionCreator examId={this.state.examId}/>}
-                {this.state.selectedQuestionTypeIndex === 1 && <FillInTheBlankQuestionCreator examId={this.state.examId}/>}
-                {this.state.selectedQuestionTypeIndex === 2 && <EssayQuestionCreator examId={this.state.examId}/>}
+                {this.state.selectedQuestionTypeIndex === 0
+                && <MultipleChoiceQuestionCreator
+                    examId={this.state.examId}
+                    lessonId={this.state.lessonId}
+                    navigation={this.props.navigation}/>}
+                {this.state.selectedQuestionTypeIndex === 3
+                && <TrueFalseQuestionCreator
+                    examId={this.state.examId}
+                    lessonId={this.state.lessonId}
+                    navigation={this.props.navigation}/>}
+                {this.state.selectedQuestionTypeIndex === 1
+                && <FillInTheBlankQuestionCreator
+                    examId={this.state.examId}
+                    lessonId={this.state.lessonId}
+                    navigation={this.props.navigation}/>}
+                {this.state.selectedQuestionTypeIndex === 2
+                && <EssayQuestionCreator
+                    examId={this.state.examId}
+                    lessonId={this.state.lessonId}
+                    navigation={this.props.navigation}/>}
 
                 {this.state.questions.map(
                     (question, index) => (
@@ -110,21 +126,44 @@ class QuestionList extends Component {
                             onPress={() => {
                                 if (question.type === "TrueFalse")
                                 {this.props.navigation
-                                        .navigate("TrueFalseEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
+                                        .navigate("TrueFalseEditor",
+                                            {questionId: question.id,
+                                                question: question,
+                                                examId: this.state.examId,
+                                                lessonId: this.state.lessonId})}
                                 if (question.type === "MultiChoice")
                                 {this.props.navigation
-                                        .navigate("MultipleChoiceEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
+                                        .navigate("MultipleChoiceEditor",
+                                            {questionId: question.id,
+                                                question: question,
+                                                examId: this.state.examId,
+                                                lessonId: this.state.lessonId})}
                                 if (question.type === "Essay")
                                 {this.props.navigation
-                                    .navigate("EssayEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
+                                    .navigate("EssayEditor",
+                                        {questionId: question.id,
+                                            question: question,
+                                            examId: this.state.examId,
+                                            lessonId: this.state.lessonId})}
                                 if (question.type === "FillInTheBlank")
                                 {this.props.navigation
-                                    .navigate("FillInTheBlankEditor", {questionId: question.id,question: question, examId: this.state.examId, lessonId: this.state.lessonId})}
+                                    .navigate("FillInTheBlankEditor",
+                                        {questionId: question.id,
+                                            question: question,
+                                            examId: this.state.examId,
+                                            lessonId: this.state.lessonId})}
 
                             }}
                             key={index}
                             subtitle={question.description}
                             title={question.title}/>))}
+
+
+                <Button backgroundColor="red"
+                        color="blue"
+                        onPress={() => {
+                            this.deleteExam()}}
+                        title="Delete Exam"/>
 
             </ScrollView>
         )

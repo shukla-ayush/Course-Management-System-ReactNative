@@ -7,7 +7,7 @@ import TrueFalseQuestionService from "../services/TrueFalseQuestionService";
 import QuestionList from "../components/QuestionList"
 
 class TrueFalseEditor extends React.Component {
-    static navigationOptions = { title: "True False Updator"}
+    static navigationOptions = { title: "True False Editor"}
     constructor(props) {
         super(props)
         this.state = {
@@ -75,7 +75,8 @@ class TrueFalseEditor extends React.Component {
     }
 
     updateTrueFalse(){
-        this.trueFalseQuestionService.updateTrueFalse(this.state.questionId, this.state.trueFalseQuestion)
+        this.trueFalseQuestionService
+            .updateTrueFalse(this.state.questionId, this.state.trueFalseQuestion)
     }
 
 
@@ -83,9 +84,10 @@ class TrueFalseEditor extends React.Component {
         this.trueFalseQuestionService
             .deleteTrueFalse(this.state.questionId)
             .then(() => {
-                console.log(this.state.lessonId)
                 this.props.navigation
-                    .navigate("QuestionList", {examId: this.state.examId, lessonId: this.state.lessonId});
+                    .navigate("QuestionList",
+                        {examId: this.state.examId,
+                            lessonId: this.state.lessonId});
             })
     }
 
@@ -135,17 +137,19 @@ class TrueFalseEditor extends React.Component {
                            title="Update"
                            onPress={() => {this.updateTrueFalse()}}/>
 
-                <Button	backgroundColor="blue"
+                <Button	backgroundColor="black"
                            color="white"
                            title="Cancel"
                            onPress={() => {
                                this.props.navigation
-                                   .navigate("QuestionList", {examId: this.state.examId, lessonId: this.state.lessonId })}}/>
+                                   .navigate("QuestionList",
+                                       {examId: this.state.examId,
+                                           lessonId: this.state.lessonId })}}/>
 
-                {/*<Button backgroundColor="red"*/}
-                        {/*color="white"*/}
-                        {/*onPress={() => {this.deleteTrueFalse()}}*/}
-                        {/*title="Delete Question"/>*/}
+                <Button backgroundColor="red"
+                        color="white"
+                        onPress={() => {this.deleteTrueFalse()}}
+                        title="Delete True or False"/>
 
 
                 <Text h3>Preview</Text>

@@ -56,18 +56,18 @@ export default class MultipleChoiceQuestionService {
             })
     }
 
-    // deleteMultiChoice(questionId) {
-    //     return fetch(MULTI_CHOICE_API_URL2 + '/' + questionId,
-    //         {
-    //             method: 'DELETE'
-    //         })
-    //         .then(function (response)
-    //         {
-    //             return response;
-    //         })
-    //         .catch(function(error) {
-    //             console.log(error.message);
-    //         })
-    // }
+    deleteMultiChoice(questionId) {
+        return fetch(MULTI_CHOICE_API_URL2 + '/' + questionId,
+            {
+                method: 'DELETE'
+            })
+            .then(function (response)
+            {
+                return response;
+            })
+            .catch(function(error) {
+                console.log(error.message);
+            })
+    }
 
 }

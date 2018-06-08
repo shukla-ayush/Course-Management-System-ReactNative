@@ -12,6 +12,7 @@ class FillInTheBlankQuestionCreator extends React.Component {
         super(props)
         this.state = {
             examId: 1,
+            lessonId: 1,
             fbQuestion: {title: '', description: '', points: 0, questionText: '', variables: '', type: 'FillInTheBlank'}
         }
         this.fillInTheBlankQuestionService = FillInTheBlankQuestionService.instance;
@@ -19,14 +20,20 @@ class FillInTheBlankQuestionCreator extends React.Component {
 
     componentWillReceiveProps(newProps){
         this.setState({
-            examId: newProps.examId
+            examId: newProps.examId,
+            lessonId: newProps.lessonId
         })
+        console.log(this.state.lessonId + "##########")
     }
 
     componentDidMount() {
         const {navigation} = this.props;
         const examId = this.props.examId;
+        const lessonId = this.props.lessonId;
+        console.log(lessonId+"@@@2")
+        console.log(examId)
         this.setState({
+            lessonId: lessonId,
             examId: examId
         })
     }
@@ -145,9 +152,13 @@ class FillInTheBlankQuestionCreator extends React.Component {
                                    .navigate("QuestionList", {lessonId: this.state.lessonId, examId: this.state.examId})}}/>
 
                 <Text h3>Preview</Text>
+
                 <Text>{this.state.fbQuestion.questionText.replace(/\[([^\]]+)\]/g, '[         ]')}</Text>
-                <Text h2>{this.state.fbQuestion.title}</Text>
+
+                <Text>{this.state.fbQuestion.title}</Text>
+
                 <Text>{this.state.fbQuestion.description}</Text>
+
                 <Text>{this.state.fbQuestion.points}</Text>
             </ScrollView>
         )

@@ -56,18 +56,18 @@ export default class EssayQuestionService {
             })
     }
 
-    // deleteEssay(questionId) {
-    //     return fetch(ESSAY_API_URL2 + '/' + questionId,
-    //         {
-    //             method: 'DELETE'
-    //         })
-    //         .then(function (response)
-    //         {
-    //             return response;
-    //         })
-    //         .catch(function(error) {
-    //             console.log(error.message);
-    //         })
-    // }
+    deleteEssay(questionId) {
+        return fetch(ESSAY_API_URL2 + '/' + questionId,
+            {
+                method: 'DELETE'
+            })
+            .then(function (response)
+            {
+                return response;
+            })
+            .catch(function(error) {
+                console.log(error.message);
+            })
+    }
 
 }

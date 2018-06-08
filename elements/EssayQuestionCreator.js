@@ -12,22 +12,26 @@ class EssayQuestionCreator extends React.Component {
         super(props)
         this.state = {
             examId: 1,
+            lessonId: 1,
             essayQuestion: {title: '', description: '', points: 0, type: 'Essay'}
         }
         this.essayQuestionService = EssayQuestionService.instance;
     }
 
-    componentWillReceiveProps(newProps){
-        this.setState({
-            examId: newProps.examId
-        })
-    }
-
     componentDidMount() {
         const {navigation} = this.props;
         const examId = this.props.examId;
+        const lessonId = this.props.lessonId;
         this.setState({
+            lessonId: lessonId,
             examId: examId
+        })
+    }
+
+    componentWillReceiveProps(newProps){
+        this.setState({
+            examId: newProps.examId,
+            lessonId: newProps.lessonId
         })
     }
 
@@ -53,7 +57,8 @@ class EssayQuestionCreator extends React.Component {
     }
 
     createEssay(){
-        this.essayQuestionService.createEssay(this.state.examId, this.state.essayQuestion)
+        this.essayQuestionService
+            .createEssay(this.state.examId, this.state.essayQuestion)
     }
 
     render() {
@@ -96,12 +101,16 @@ class EssayQuestionCreator extends React.Component {
                            title="Cancel"
                            onPress={() => {
                                this.props.navigation
-                                   .navigate("QuestionList", {lessonId: this.state.lessonId, examId: this.state.examId})}}/>
+                                   .navigate("QuestionList",
+                                       {lessonId: this.state.lessonId,
+                                           examId: this.state.examId})}}/>
 
                 <Text h3>Preview</Text>
 
                 <Text>{this.state.essayQuestion.title}</Text>
+
                 <Text>{this.state.essayQuestion.description}</Text>
+
                 <Text>{this.state.essayQuestion.points}</Text>
 
             </ScrollView>

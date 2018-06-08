@@ -11,6 +11,7 @@ class MultipleChoiceQuestionCreator extends React.Component {
         super(props)
         this.state = {
             examId: 1,
+            lessonId: 1,
             multipleChoiceQuestion: {title: '', description: '', points: 0, options: '', correctOption: 0, type: 'MultiChoice' },
             buttons: []
         }
@@ -20,15 +21,18 @@ class MultipleChoiceQuestionCreator extends React.Component {
 
     componentWillReceiveProps(newProps){
         this.setState({
-            examId: newProps.examId
+            examId: newProps.examId,
+            lessonId: newProps.lessonId
         })
     }
 
     componentDidMount() {
         const {navigation} = this.props;
         const examId = this.props.examId;
+        const lessonId = this.props.lessonId;
         this.setState({
-            examId: examId
+            examId: examId,
+            lessonId: lessonId
         })
     }
 
@@ -133,13 +137,16 @@ class MultipleChoiceQuestionCreator extends React.Component {
                 <Text h3>Preview</Text>
 
                 <Text>{this.state.multipleChoiceQuestion.title}</Text>
+
                 <Text>{this.state.multipleChoiceQuestion.description}</Text>
+
                 <Text>{this.state.multipleChoiceQuestion.points}</Text>
 
                 <ButtonGroup
                     onPress={this.updateIndex}
                     selectedIndex={this.state.multipleChoiceQuestion.correctOption}
                     buttons={this.state.buttons} />
+
             </ScrollView>
         )
     }

@@ -55,18 +55,18 @@ export default class FillInTheBlankQuestionService {
             })
     }
 
-    // deleteFillInTheBlank(questionId) {
-    //     return fetch(FILL_BLANK_API_URL2 + '/' + questionId,
-    //         {
-    //             method: 'DELETE'
-    //         })
-    //         .then(function (response)
-    //         {
-    //             return response;
-    //         })
-    //         .catch(function(error) {
-    //             console.log(error.message);
-    //         })
-    // }
+    deleteFillInTheBlank(questionId) {
+        return fetch(FILL_BLANK_API_URL2 + '/' + questionId,
+            {
+                method: 'DELETE'
+            })
+            .then(function (response)
+            {
+                return response;
+            })
+            .catch(function(error) {
+                console.log(error.message);
+            })
+    }
 
 }

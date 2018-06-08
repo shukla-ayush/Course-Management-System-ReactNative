@@ -16,15 +16,14 @@ export default class WidgetEditor extends React.Component {
     componentDidMount() {
         const {navigation} = this.props;
         const lessonId = navigation.getParam('lessonId');
-        this.setState({
-            lessonId: lessonId,
-        })
+        this.setState({lessonId: lessonId})
     }
 
     render() {
         return(
             <ScrollView>
                 <Picker
+
                     onValueChange={(itemValue, itemIndex) =>
                         this.setState({widgetType: itemValue})}
                     selectedValue={this.state.widgetType}>
@@ -33,12 +32,15 @@ export default class WidgetEditor extends React.Component {
                     <Picker.Item value="Assignment"
                                  label="Draft Assignment" />
                 </Picker>
+
                 {this.state.widgetType === 'Exam'
                 && <ExamEditor navigation={this.props.navigation}
                                lessonId={this.state.lessonId}/>}
+
                 {this.state.widgetType === 'Assignment'
                 && <AssignmentCreator navigation={this.props.navigation}
                                       lessonId={this.state.lessonId}/>}
+
             </ScrollView>
         )
     }

@@ -228,19 +228,23 @@ class WidgetList extends Component {
     render() {
         return (
             <ScrollView style={{padding: 15}}>
-                <Button backgroundColor="green"
+
+                <Button backgroundColor="blue"
                         color="white"
                         onPress={() => this.props.navigation.navigate('WidgetEditor', {lessonId: this.state.lessonId})}
                         title="Add Widget"/>
+
                 {this.state.widgets.map(
                     (widget, index) => (
                         <ListItem
                             onPress={() => {
                                 if (widget.widgetType === "Exam") {
-                                    this.props.navigation.navigate("QuestionList", {examId: widget.id, lessonId: this.state.lessonId})
+                                    this.props.navigation.navigate("QuestionList",
+                                        {examId: widget.id, lessonId: this.state.lessonId})
                                 }
                                 else {
-                                    this.props.navigation.navigate("AssignmentEditor", {assignmentId: widget.id, widget: widget,lessonId: this.state.lessonId })
+                                    this.props.navigation.navigate("AssignmentEditor",
+                                        {assignmentId: widget.id, widget: widget,lessonId: this.state.lessonId })
                                 }
                             }}
                             key={index}

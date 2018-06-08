@@ -153,17 +153,17 @@ class MultipleChoiceEditor extends React.Component {
                            title="Update"
                            onPress={() => {this.updateMultiChoice()}}/>
 
-                <Button	backgroundColor="blue"
+                <Button	backgroundColor="black"
                            color="white"
                            title="Cancel"
                            onPress={() => {
                                this.props.navigation
                                    .navigate("QuestionList", {examId: this.state.examId})}}/>
 
-                {/*<Button	backgroundColor="red"*/}
-                           {/*color="white"*/}
-                           {/*onPress={() => {this.deleteMultiChoice()}}*/}
-                           {/*title="Delete"/>*/}
+                <Button	backgroundColor="red"
+                           color="white"
+                           onPress={() => {this.deleteMultiChoice()}}
+                           title="Delete Multiple Choice"/>
 
 
                 <ButtonGroup

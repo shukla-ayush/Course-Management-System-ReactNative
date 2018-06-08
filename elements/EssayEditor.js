@@ -7,7 +7,7 @@ import EssayQuestionService from "../services/EssayQuestionService";
 import QuestionList from "../components/QuestionList"
 
 class EssayEditor extends React.Component {
-    static navigationOptions = { title: "Essay Updator"}
+    static navigationOptions = { title: "Essay Editor"}
     constructor(props) {
         super(props)
         this.state = {
@@ -115,17 +115,18 @@ class EssayEditor extends React.Component {
                            title="Update"
                            onPress={() => {this.updateEssay()}}/>
 
-                <Button	backgroundColor="blue"
+                <Button	backgroundColor="black"
                            color="white"
                            title="Cancel"
                            onPress={() => {
                                this.props.navigation
-                                   .navigate("QuestionList", {examId: this.state.examId})}}/>
+                                   .navigate("QuestionList",
+                                       {examId: this.state.examId})}}/>
 
-                {/*<Button	backgroundColor="red"*/}
-                           {/*color="white"*/}
-                           {/*onPress={() => {this.deleteEssay()}}*/}
-                           {/*title="Delete"/>*/}
+                <Button	backgroundColor="red"
+                           color="white"
+                           onPress={() => {this.deleteEssay()}}
+                           title="Delete Essay"/>
 
                 <Text h3>Preview</Text>
 

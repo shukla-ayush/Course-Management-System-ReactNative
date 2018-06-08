@@ -48,7 +48,8 @@ class ExamEditor extends React.Component {
             .createExam(this.state.lessonId, this.state.exam)
             .then(() => {
                 this.props.navigation
-                    .navigate("WidgetList", {lessonId: this.state.lessonId})
+                    .navigate("WidgetList",
+                        {lessonId: this.state.lessonId})
             });
     }
 

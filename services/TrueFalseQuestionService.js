@@ -57,18 +57,18 @@ export default class TrueFalseQuestionService {
             })
     }
 
-    // deleteTrueFalse(questionId) {
-    //     return fetch(TRUE_FALSE_API_URL2 + '/' + questionId,
-    //         {
-    //             method: 'DELETE'
-    //         })
-    //         .then(function (response)
-    //         {
-    //             return response;
-    //         })
-    //         .catch(function(error) {
-    //             console.log(error.message);
-    //         })
-    // }
+    deleteTrueFalse(questionId) {
+        return fetch(TRUE_FALSE_API_URL2 + '/' + questionId,
+            {
+                method: 'DELETE'
+            })
+            .then(function (response)
+            {
+                return response;
+            })
+            .catch(function(error) {
+                console.log(error.message);
+            })
+    }
 
 }

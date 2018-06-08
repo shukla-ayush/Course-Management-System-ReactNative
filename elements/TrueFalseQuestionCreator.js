@@ -12,6 +12,7 @@ class TrueFalseQuestionCreator extends React.Component {
         super(props)
         this.state = {
             examId: 1,
+            lessonId: 1,
             trueFalseQuestion: {title: '', description: '', points: 0, isTrue: true, type: 'TrueFalse' }
         }
         this.trueFalseQuestionService = TrueFalseQuestionService.instance;
@@ -20,15 +21,18 @@ class TrueFalseQuestionCreator extends React.Component {
 
     componentWillReceiveProps(newProps){
         this.setState({
-            examId: newProps.examId
+            examId: newProps.examId,
+            lessonId: newProps.lessonId
         })
     }
 
     componentDidMount() {
         const {navigation} = this.props;
         const examId = this.props.examId;
+        const lessonId = this.props.lessonId;
         this.setState({
-            examId: examId
+            examId: examId,
+            lessonId: lessonId
         })
     }
 
@@ -116,13 +120,17 @@ class TrueFalseQuestionCreator extends React.Component {
                            title="Cancel"
                            onPress={() => {
                                this.props.navigation
-                                   .navigate("QuestionList", {lessonId: this.state.lessonId, examId: this.state.examId})}}/>
-
+                                   .navigate("QuestionList",
+                                       {lessonId: this.state.lessonId,
+                                           examId: this.state.examId})}}/>
 
                 <Text h3>Preview</Text>
 
                 <Text>{this.state.trueFalseQuestion.title}</Text>
+
                 <Text>{this.state.trueFalseQuestion.description}</Text>
+
+                <Text>{this.state.trueFalseQuestion.points}</Text>
 
             </ScrollView>
         )

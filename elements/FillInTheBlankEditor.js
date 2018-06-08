@@ -7,7 +7,7 @@ import FillInTheBlankQuestionService from "../services/FillInTheBlankQuestionSer
 import QuestionList from "../components/QuestionList"
 
 class FillInTheBlankEditor extends React.Component {
-    static navigationOptions = { title: "Fill in the Blank Updator"}
+    static navigationOptions = { title: "Fill in the Blank Editor"}
     constructor(props) {
         super(props)
         this.state = {
@@ -94,7 +94,8 @@ class FillInTheBlankEditor extends React.Component {
     }
 
     updateFillInTheBlank(){
-        this.fillInTheBlankQuestionService.updateFillInTheBlank(this.state.questionId, this.state.fbQuestion)
+        this.fillInTheBlankQuestionService
+            .updateFillInTheBlank(this.state.questionId, this.state.fbQuestion)
     }
 
     deleteFillInTheBlank(){
@@ -102,7 +103,9 @@ class FillInTheBlankEditor extends React.Component {
             .deleteFillInTheBlank(this.state.questionId)
             .then(() => {
                 this.props.navigation
-                    .navigate("QuestionList", {examId: this.state.examId, lessonId: this.state.lessonId});
+                    .navigate("QuestionList",
+                        {examId: this.state.examId,
+                            lessonId: this.state.lessonId});
             })
     }
 
@@ -166,13 +169,22 @@ class FillInTheBlankEditor extends React.Component {
                            title="Cancel"
                            onPress={() => {
                                this.props.navigation
-                                   .navigate("QuestionList", {examId: this.state.examId})}}/>
+                                   .navigate("QuestionList",
+                                       {examId: this.state.examId})}}/>
+
+                <Button backgroundColor="red"
+                        color="white"
+                        onPress={() => {this.deleteFillInTheBlank()}}
+                        title="Delete Fill in the Blank"/>
 
                 <Text h3>Preview</Text>
 
                 <Text>{this.state.fbQuestion.questionText.replace(/\[([^\]]+)\]/g, '[         ]')}</Text>
+
                 <Text>{this.state.fbQuestion.title}</Text>
+
                 <Text>{this.state.fbQuestion.description}</Text>
+
                 <Text>{this.state.fbQuestion.points}</Text>
 
             </ScrollView>
